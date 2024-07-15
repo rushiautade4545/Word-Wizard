@@ -6,17 +6,44 @@
     <title>Word-Wizard</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body><div class="main-container">
     <h1>TEXT-TOOL</h1>
-    <input type="text" class="input-text">
-    <P id="result-text">
+    <input type="text" class="input-text" id="input-text">
+    <P id="result-text" class="result-text">
 
     </P><br>
     <div class="btn-container">
-        <button class="btn">UPPERCASE</button>
-        <button  class="btn">lowercase</button>
-        <button  class="btn">Word count</button>
-        <button  class="btn">Char Count</button>
-    </div>
+        <button class="btn" onclick="Actionresult('uppercase')">UPPERCASE</button>
+        <button  class="btn"onclick="Actionresult('lowercase')">lowercase</button>
+        <button  class="btn"onclick="Actionresult('char count')">Char Count</button>
+        <button  class="btn" onclick="Actionresult('word count')">Word count</button>
+       
+  <script>
+             function Actionresult(action){
+              const inputElement = document.getElementById("input-text")
+              const resultElement = document.getElementById("result-text")
+           
+                if(action=='uppercase')
+                
+                resultElement.innerText = inputElement.value.toUpperCase();
+
+                else if(action=='lowercase'){
+                    resultElement.innerText = inputElement.value.toLowerCase()
+                }
+                else if(action=='char count'){
+                    resultElement.innerText = `Total Character :${inputElement.value.length}`
+                }
+
+                else if(action=='word count'){
+                     resultElement.innerText= `Total Word :${inputElement.value.split(" ").length}`
+                }
+                  
+             }
+            
+
+          
+
+
+  </script>
 </body>
 </html>
