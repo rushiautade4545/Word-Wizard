@@ -8,8 +8,8 @@
 </head>
 <body><div class="main-container">
     <h1>TEXT-TOOL</h1>
-    <input type="text" class="input-text" id="input-text">
-    <P id="result-text" class="result-text">
+    <input type="text" class="input-text" placeholder="Enter Your Text here" id="input-text">
+    <P id="result-text" class="result-text" >
 
     </P><br>
     <div class="btn-container">
@@ -22,28 +22,23 @@
              function Actionresult(action){
               const inputElement = document.getElementById("input-text")
               const resultElement = document.getElementById("result-text")
+              const inputVal=inputElement.value
+
            
                 if(action=='uppercase')
+                    resultElement.innerText =inputVal.toUpperCase();
+
+                else if(action=='lowercase')
+                    resultElement.innerText = inputVal.toLowerCase()
                 
-                resultElement.innerText = inputElement.value.toUpperCase();
-
-                else if(action=='lowercase'){
-                    resultElement.innerText = inputElement.value.toLowerCase()
-                }
-                else if(action=='char count'){
-                    resultElement.innerText = `Total Character :${inputElement.value.length}`
-                }
-
-                else if(action=='word count'){
-                     resultElement.innerText= `Total Word :${inputElement.value.split(" ").length}`
-                }
+                else if(action=='char count')
+                    resultElement.innerText = `Total Character :${inputVal.length}`
+                
+                else if(action=='word count')
+                    resultElement.innerText= `Total Word :${inputVal.split(" ").length}`
+                
                   
              }
-            
-
-          
-
-
-  </script>
+     </script>
 </body>
 </html>
